@@ -1,0 +1,13 @@
+<br/>
+<h2><u>Tag</u> - <i>{{tag.title}}</i></h2>
+
+<ul class = "ui list">
+    <li>Id : {{tag.id}}</li>
+    <li>Title : {{tag.title}}</li>
+    <li>Created at : {{tag.created_at}}</li>
+    <li>Updated at : {{tag.updated_at}}</li>
+</ul>
+
+<form id="delete" action="/api/bookmark/tag/{{tag.id}}?_method=DELETE" method="POST">
+        <button class="ui negative button">Delete this tag</button>
+</form>

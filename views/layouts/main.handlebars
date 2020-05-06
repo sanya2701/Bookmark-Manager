@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <title>Bookmark your websites</title>
+</head>
+<body>
+    <div class="ui inverted segment">
+        <div class="ui inverted secondary pointing menu">
+            <a class="active item" href="/api/bookmark">
+                <i class="home icon"></i>
+            Home
+            </a>
+            <a class="item" href = "/api/bookmark/new" >
+                <i class="plus icon"></i>
+            Bookmarks
+            </a>
+            <a class="item" href = "/api/bookmark/tag/new" >
+                <i class="plus icon"></i>
+            Tags
+            </a>
+            <a class="item" href = "/api/bookmark/tag" >
+            View all Tags
+            </a>
+        </div>
+    </div>
+    <div class="ui container">
+        {{{body}}}
+    </div>
+</body>
+</html>

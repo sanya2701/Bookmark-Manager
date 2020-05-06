@@ -1,0 +1,8 @@
+<br/>
+<h2>All tags</h2>
+
+<ol class = "ui list">
+    {{#each tag}}
+    <li><a href = "/api/bookmark/tag/{{this._id}}">{{this.title}}</a>-{{this.created_at}}</li>
+    {{/each}}
+</ol>
