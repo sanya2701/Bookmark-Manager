@@ -17,6 +17,19 @@
     </li>
 </ul>
 
-<form id="delete" action="/api/bookmark/{{bm.id}}?_method=DELETE" method="POST">
-        <button class="ui negative button">Delete this bookmark</button>
-</form>
+<div class = "ui buttons">
+    <form id="delete" action="/api/bookmark/{{bm.id}}?_method=DELETE" method="POST">
+            <button class="ui negative button">Delete bookmark</button>
+    </form>
+    <div class = "or"></div>
+
+    {{#if bm.tag}}
+        <form id="delete" action="/api/bookmark/{{bm.id}}/delTag" method="POST">
+                <button class="ui negative button">Delete tag</button>
+        </form>
+    {{else}}
+        <a class="item" href = "/api/bookmark/{{bm.id}}/addTagToBM" >
+            <button class = "ui teal button">Add Tag </button>
+        </a>
+    {{/if}}
+</div>

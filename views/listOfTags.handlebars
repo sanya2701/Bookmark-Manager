@@ -1,0 +1,14 @@
+<h2>Select a tag to add to the bookmark "{{bm.title}}"</h2>
+
+<form action = "/api/bookmark/{{bm.id}}/addTagToBM" method="POST" class="ui form">
+    <div class = "field">
+        <label for="title">Tags</label>
+        <select name = "btag">
+            <option value='507f191e810c19729de860ea'>Select Tag</option>
+            {{#each tag }}
+            <option value = {{this.id}}>{{this.title}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <input type="submit" value="Add to bookmark" class="fluid ui teal button">
+</form>
