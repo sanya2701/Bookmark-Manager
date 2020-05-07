@@ -1,8 +1,25 @@
 <br/>
 <h2>All tags</h2>
 
-<ol class = "ui list">
+<div class="ui feed">
+    {{#each tag}}
+    <div class="event">
+        <div class="label">
+            <i class="tag icon"></i>
+        </div>
+        <div class="content">
+            <div class="summary">
+                <a class="ui black header" href = "/api/bookmark/tag/{{this._id}}"> {{this.title}} </a> 
+                <div class="date">{{this.created_at}}</div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    {{/each}} 
+</div>
+
+{{!-- <ol class = "ui list">
     {{#each tag}}
     <li><a href = "/api/bookmark/tag/{{this._id}}">{{this.title}}</a>-{{this.created_at}}</li>
     {{/each}}
-</ol>
+</ol>  --}}

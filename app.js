@@ -6,7 +6,7 @@ const Handlebars = require('handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const app = express();
 
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 
 //handlebars
 app.engine('handlebars', exphbs({

@@ -1,2 +1,35 @@
 <br/>
-<h1>List of Bookmarks</h1>
+<h1>My Bookmarks</h1><br/>
+
+
+<div class="ui feed">
+    {{#each bm}}
+
+    <div class="event">
+        <div class="label">
+            <i class="bookmark icon"></i>
+        </div>
+        <div class="content">
+            <div class="summary">
+                <a href = "/api/bookmark/{{this._id}}" class="ui black header">{{this.title}} </a> - 
+                <a href="{{this.link}}">{{this.link}}
+                <i class="black external alternate icon "></i>
+                </a>
+                <div class="date">{{this.created_at}}</div>
+            </div>
+            <div class="ui grey header extra text">
+                Published by - {{this.publisher}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+                {{#if tag}}  
+                    <i class="tag icon"></i>{{this.tag.title}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <br/>
+    {{/each}} 
+
+</div>
+
+   {{!-- {{#each bm}}
+       <li>{{this.title}} - {{this.link}}</li>
+   {{/each}}  --}}

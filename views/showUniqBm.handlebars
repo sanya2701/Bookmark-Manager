@@ -1,0 +1,22 @@
+<br/>
+<h2><i class="bookmark icon"></i> <i>{{bm.title}}</i></h2>
+
+<ul class = "ui list">
+    <li>Id : {{bm.id}}</li>
+    <li>Title : {{bm.title}}</li>
+    <li>Link : <a href= {{bm.link}}>{{bm.link}}</a></li>
+    <li>Publisher : {{bm.publisher}}</li>
+    <li>Created at : {{bm.created_at}}</li>
+    <li>Updated at : {{bm.updated_at}}</li>
+    <li>Tag :
+        {{#if bm.tag}}  
+            <i class="tag icon"></i>{{bm.tag.title}}
+        {{else}}
+            None
+        {{/if}}
+    </li>
+</ul>
+
+<form id="delete" action="/api/bookmark/{{bm.id}}?_method=DELETE" method="POST">
+        <button class="ui negative button">Delete this bookmark</button>
+</form>
