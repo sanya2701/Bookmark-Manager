@@ -108,7 +108,7 @@ router.get("/:id/addTagToBM",(req,res)=>{
 
 //Add tag to bookmark post route
 router.post("/:id/addTagToBM",(req,res)=>{
-    console.log(req.body);
+    //console.log(req.body);
     const bm = {}
     bm.tag = req.body.btag;
     Bookmark.updateOne({_id:req.params.id},bm,(err)=>{
