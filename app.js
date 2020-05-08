@@ -5,6 +5,7 @@ const exphbs = require("express-handlebars");
 const Handlebars = require('handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 const app = express();
+require('dotenv').config()
 
 app.use(methodOverride('_method'));
 
@@ -20,7 +21,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 
 //connect DB
-mongoose.connect('mongodb://localhost:27017/bookmarkDB', {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('process.env.MONGODB_URI || mongodb://localhost:27017/bookmarkDB', {useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once('open',()=>console.log("Connected to DB bookmarkDB"))   
 db.on('error',(err)=> console.log(err));                      
@@ -38,7 +39,7 @@ app.get("/",(req,res)=>{
 })
 
 
-var PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
     console.log("Server Started");
 })
