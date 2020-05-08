@@ -46,7 +46,7 @@ router.get("/:id",(req,res)=>{
         if(err) {
              console.log(err);
         } else {
-            res.render("showuniqTag",{
+            res.render("showUniqTag",{
             tag
         });
     }
